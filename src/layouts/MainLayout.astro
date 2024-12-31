@@ -1,0 +1,34 @@
+---
+// javascript stuff goes here, between the hyphens ---
+import NavBar from "../components/NavBar.astro";
+
+const { title } = Astro.props;
+// prop is kind of like an attribute parameter. This can be set differently for each page. See MainLayout tag in index...
+---
+
+<!-- HTML comment syntax is valid in .astro files -->{
+    /* JS comment syntax is also valid */
+}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+        <!-- this <title> tag reps the text in the browser bar of the page -->
+        <head>
+            <body>
+                <NavBar />
+                <section class="container--main">
+                    <!-- classes are used to style elements. objects of same class have same style -->
+                    <h1>main layout bit</h1>
+                    <slot />
+                    <!-- <slot/> is something a "super-class" like MainLayout uses to show a sub class 
+            that it (the subclass) can extend its funcionality here -->
+                </section>
+                <body> <html></html></body></body
+            ></head
+        ></head>
+</html>

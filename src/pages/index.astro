@@ -1,0 +1,19 @@
+---
+// javascript stuff goes here, between the hyphens ---
+import "../layouts/MainLayout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<!-- HTML comment syntax is valid in .astro files -->{
+    /* JS comment syntax is also valid */
+}
+
+<!-- see how I pass in a title? It's like setting an attribute for a class when constructing it.
+ Go back to MainLayout and see how {title} is used -->
+
+<MainLayout title={"Home | Mohamed A."}>
+    <h1>Hello! I'm Mohamed</h1>
+    <!-- uses main layout as a "super-class". This takes up the slot in MainLayout -->
+</MainLayout>
+
+<!-- '/' in a block like </MainLayout> closes the tag. ie this shows where <MainLayout> ends  -->
