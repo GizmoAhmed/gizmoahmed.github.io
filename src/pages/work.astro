@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-import ContactCTA from '../components/ContactCTA.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
 import Hero from '../components/Hero.astro';
 import Grid from '../components/Grid.astro';
@@ -21,6 +20,7 @@ const projects = (await getCollection('work')).sort(
 		<main class="wrapper stack gap-8">
 			<Hero
 				title="Projects"
+				subtitle=""
 				tagline=""
 				align="start"
 			/>
@@ -34,6 +34,5 @@ const projects = (await getCollection('work')).sort(
 				}
 			</Grid>
 		</main>
-		<ContactCTA />
 	</div>
 </BaseLayout>
