@@ -7,12 +7,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 // Component Imports
 import Grid from "../components/Grid.astro";
 import Hero from "../components/Hero.astro";
-import Icon from "../components/Icon.astro";
-import Pill from "../components/Pill.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 
 // Page section components
-import ContactCTA from "../components/ContactCTA.astro";
 import Skills from "../components/Skills.astro";
 
 // Content Fetching: List four most recent work projects
@@ -32,14 +29,14 @@ const projects = (await getCollection("work"))
                     title="Hello, my name is Mohamed Ahmed"
                     tagline={`I am a soon-to-be graduate of Michigan State University with a Bachelor’s degree in Computer Science.
 						As both a professional and a hobbyist, I have a deep passion for programming and game development.`}
-                    align="start"
+                    align="center"
                 />
-                <img
+                <!-- <img
                     alt="Pic of Mohamed"
                     width="240"
                     height="310"
                     src="/assets/Mo.jpg"
-                />
+                /> -->
             </header>
 
             <Skills />
@@ -78,14 +75,6 @@ const projects = (await getCollection("work"))
 
     .roles {
         display: none;
-    }
-
-    .hero img {
-        aspect-ratio: 5 / 4;
-        object-fit: cover;
-        object-position: top;
-        border-radius: 1.5rem;
-        box-shadow: var(--shadow-md);
     }
 
     @media (min-width: 50em) {
