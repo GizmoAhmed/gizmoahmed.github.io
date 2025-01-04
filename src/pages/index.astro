@@ -7,21 +7,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 // Component Imports
 import Grid from "../components/Grid.astro";
 import Hero from "../components/Hero.astro";
+import Icon from "../components/Icon.astro";
+import Pill from "../components/Pill.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 
 // Page section components
 import Skills from "../components/Skills.astro";
 
 // Content Fetching: List work projects
-const projects = (await getCollection("work"))
-    .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+const projects = (await getCollection("work")).sort(
+    (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+);
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
 
 <BaseLayout>
-    <div class="stack gap-20 lg:gap-48">
+    <div class="stack gap-20 lg:gap-20">
         <div class="stack gap-20 lg:gap-48">
             <header class="hero">
                 <Hero
@@ -31,6 +34,24 @@ const projects = (await getCollection("work"))
                     I have a deep passion for programming and game development. As both a student, industry professional, and hobbyist, I have a lot of expereince in a wide range of software.`}
                     align="center"
                 />
+            
+                <h3>Skills</h3>
+
+                <div class="roles">
+                    <Pill><Icon icon="terminal-window"  size="1.33em" /> C++</Pill>
+                    <Pill><Icon icon="terminal-window"  size="1.33em" /> C#</Pill>
+                    <Pill><Icon icon="terminal-window"  size="1.33em" /> Python</Pill>
+                    <Pill><Icon icon="code"             size="1.33em" /> Javascript</Pill>
+                </div>
+
+                <h3>Game Engines & Frameworks</h3>
+
+                <div class="roles">
+                    <Pill><Icon icon="cube" size="1.33em" /> Unity</Pill>
+                    <Pill><Icon icon="robot" size="1.33em" /> Godot</Pill>
+                    <Pill><Icon icon="device-mobile" size="1.33em" /> Flutter</Pill>
+                    <Pill><Icon icon="rocket-launch" size="1.33em" /> Astro</Pill>
+                </div>
             </header>
         </div>
 
