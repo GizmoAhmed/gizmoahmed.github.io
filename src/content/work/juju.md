@@ -1,12 +1,12 @@
 ---
-title: Undercooked
+title: Juju
 publishDate: 2020-03-02 00:00:00
-img:  /assets/undercooked-images/izzy_undercooked.jpg
-img_alt: Undercooked img
+img:  /public/assets/juju-images/juju.jpg
+img_alt: Juju img
 description: |
-  Mulitplayer Couch Choas 
+  Puzzle Platformer
 tags:
-  - Group Development
+  - Solo Development
   - Unity & C#
   - Currently Playable  
 ---

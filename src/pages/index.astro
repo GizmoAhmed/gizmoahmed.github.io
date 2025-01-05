@@ -34,14 +34,18 @@ const projects = (await getCollection("work")).sort(
                     I have a deep passion for programming and game development. As both a student, industry professional, and hobbyist, I have a lot of expereince in a wide range of software.`}
                     align="center"
                 />
-            
                 <h3>Skills</h3>
 
                 <div class="roles">
-                    <Pill><Icon icon="terminal-window"  size="1.33em" /> C++</Pill>
-                    <Pill><Icon icon="terminal-window"  size="1.33em" /> C#</Pill>
-                    <Pill><Icon icon="terminal-window"  size="1.33em" /> Python</Pill>
-                    <Pill><Icon icon="code"             size="1.33em" /> Javascript</Pill>
+                    <Pill
+                        ><Icon icon="terminal-window" size="1.33em" /> C++</Pill
+                    >
+                    <Pill><Icon icon="terminal-window" size="1.33em" /> C#</Pill
+                    >
+                    <Pill
+                        ><Icon icon="terminal-window" size="1.33em" /> Python</Pill
+                    >
+                    <Pill><Icon icon="code" size="1.33em" /> Javascript</Pill>
                 </div>
 
                 <h3>Game Engines & Frameworks</h3>
@@ -49,43 +53,28 @@ const projects = (await getCollection("work")).sort(
                 <div class="roles">
                     <Pill><Icon icon="cube" size="1.33em" /> Unity</Pill>
                     <Pill><Icon icon="robot" size="1.33em" /> Godot</Pill>
-                    <Pill><Icon icon="device-mobile" size="1.33em" /> Flutter</Pill>
-                    <Pill><Icon icon="rocket-launch" size="1.33em" /> Astro</Pill>
+                    <Pill
+                        ><Icon icon="device-mobile" size="1.33em" /> Flutter</Pill
+                    >
+                    <Pill
+                        ><Icon icon="rocket-launch" size="1.33em" /> Astro</Pill
+                    >
+                </div>
+
+                <h2>Projects</h2>
+
+                <div class="gallery">
+                    <Grid variant="offset">
+                        {
+                            projects.map((project) => (
+                                <li>
+                                    <PortfolioPreview project={project} />
+                                </li>
+                            ))
+                        }
+                    </Grid>
                 </div>
             </header>
-        </div>
-
-        <div class="stack gap-20 lg:gap-48">
-            <div class="stack gap-20 lg:gap-48">
-                <header class="hero">
-                    <Hero
-                        title="Projects"
-                        subtitle=""
-                        tagline=""
-                        align="center"
-                    />
-                </header>
-            </div>
-
-            <main class="wrapper stack gap-20 lg:gap-48">
-                <section class="section with-background with-cta">
-                    <header class="section-header stack gap-2 lg:gap-4">
-                        <h3></h3>
-                    </header>
-
-                    <div class="gallery">
-                        <Grid variant="offset">
-                            {
-                                projects.map((project) => (
-                                    <li>
-                                        <PortfolioPreview project={project} />
-                                    </li>
-                                ))
-                            }
-                        </Grid>
-                    </div>
-                </section>
-            </main>
         </div>
     </div>
 

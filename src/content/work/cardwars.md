@@ -1,14 +1,14 @@
 ---
-title: Undercooked
+title: Card Wars II
 publishDate: 2020-03-02 00:00:00
-img:  /assets/undercooked-images/izzy_undercooked.jpg
-img_alt: Undercooked img
+img:  /assets/cardwars-images/Screenshot 2024-10-14 225429.png
+img_alt: Card Wars img
 description: |
-  Mulitplayer Couch Choas 
+  1v1 Deckbuilder
 tags:
-  - Group Development
+  - Solo Development
   - Unity & C#
-  - Currently Playable  
+  - WOrk In Progress  
 ---
 
 Lorem ipsum dolor sit amet, Astro makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
