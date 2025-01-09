@@ -32,20 +32,20 @@ const { Content } = await render(entry);
 		<div class="stack gap-15">
 			<header>
 				<div class="wrapper stack gap-2">
-					<Hero title={entry.data.title} subtitle="" align="start">
+					<Hero title={entry.data.title} subtitle="" align="center">
 						<div class="details">
 							<div class="tags">
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 							</div>
-							<p class="description">{entry.data.description}</p>
+							<!-- <p class="description">{entry.data.description}</p> -->
 						</div>
 					</Hero>
 				</div>
 			</header>
 			<main class="wrapper">
 				<div class="stack gap-10 content">					
-					</img>
-					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
+					<!-- </img>
+					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />} -->
 					<div class="content">
 						<Content />
 					</div>
@@ -70,7 +70,7 @@ const { Content } = await render(entry);
 		flex-direction: column;
 		padding: 0.5rem;
 		gap: 1.5rem;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
 	}
 
@@ -85,7 +85,8 @@ const { Content } = await render(entry);
 	}
 
 	.content {
-		max-width: 65ch;
+		font-size: var(--text-lg);
+		max-width: 95ch;
 		margin-inline: auto;
 	}
 
@@ -106,6 +107,8 @@ const { Content } = await render(entry);
 		box-shadow: var(--shadow-sm);
 		background: var(--gradient-subtle);
 		border: 1px solid var(--gray-800);
+		max-width: 40%;
+  		max-height: 40%;
 	}
 
 	.content :global(blockquote) {
