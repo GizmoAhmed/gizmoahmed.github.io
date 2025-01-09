@@ -156,6 +156,10 @@ h5 {
 	color: var(--gray-100);
 }
 
+h7 {
+	font-size: var(--text-8xl);
+}
+
 h6 {
 	font-size: var(--text-6xl);
 }

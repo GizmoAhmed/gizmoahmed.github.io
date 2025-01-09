@@ -18,13 +18,19 @@ Proin nibh nisl condimentum id venenatis a condimentum vitae. Dapibus ultrices i
 <a>
     <img
         class="wrapper stack gap-10 content"
-        src= /assets/stock-2.jpg
+        src= /assets/cardwars-images/interview3.mov
         width="300px"
         height="300px"
     />
 </a>
 
 >Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel quam elementum pulvinar etiam non.
+
+<video controls width="600">
+  <source src="\assets\cardwars-images\interview3.mp4" type="video/mp4">
+</video>
+
+
 
 > some header for figure 2 below
 

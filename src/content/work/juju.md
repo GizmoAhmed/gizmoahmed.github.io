@@ -1,7 +1,7 @@
 ---
 title: Juju
 publishDate: 2020-03-02 00:00:00
-img:  /public/assets/juju-images/juju.jpg
+img:  /assets/juju-images/juju.jpg
 img_alt: Juju img
 description: |
   Puzzle Platformer
