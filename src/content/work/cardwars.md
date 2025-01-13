@@ -4,11 +4,11 @@ publishDate: 2020-03-02 00:00:00
 img:  /assets/cardwars-images/Screenshot 2024-10-14 225429.png
 img_alt: Card Wars img
 description: |
-  1v1 Deckbuilder
+  Networked Card Battler
 tags:
+  - Networked Card Battler
   - Solo Development
   - Unity & C#
-  - WOrk In Progress  
 ---
 
 Lorem ipsum dolor sit amet, Astro makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 

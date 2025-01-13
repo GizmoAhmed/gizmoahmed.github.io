@@ -13,7 +13,7 @@ tags:
 
 > Play <a href="https://haydenhe.itch.io/undercooked" target="_blank" rel="noopener noreferrer">Undercooked</a>
 
-Undercooked is a local multiplayer game created by the prototyping team at <a href="https://gamedev.msu.edu/spartasoft/" target="_blank" rel="noopener noreferrer">Spartasoft Studio @ Michigan State</a>, where I contributed as a programmer. This game takes inspiration from <a href="https://ghosttowngames.com/game/overcooked/" target="_blank" rel="noopener noreferrer">Overcooked by Ghost Town Games</a> in more than just its name. In this two-player game, one player takes on the role of the Server, tasked with cleaning the restaurant and serving guests, while the other player assumes the role of the Rival, whose goal is to create as much mess and havoc as possible. The Server wins by maintaining cleanliness until time runs out, while the Rival wins by causing enough chaos.
+Undercooked is a local multiplayer restaurant simulator created by the prototyping team at <a href="https://gamedev.msu.edu/spartasoft/" target="_blank" rel="noopener noreferrer">Spartasoft Studio @ Michigan State</a>, where I contributed as a programmer. This game takes inspiration from <a href="https://ghosttowngames.com/game/overcooked/" target="_blank" rel="noopener noreferrer">Overcooked by Ghost Town Games</a> in more than just its name. In this two-player game, one player takes on the role of the Server, tasked with cleaning the restaurant and serving guests, while the other player assumes the role of the Rival, whose goal is to create as much mess and havoc as possible. The Server wins by maintaining cleanliness until time runs out, while the Rival wins by causing enough chaos.
 
 <a>
     <img
@@ -39,7 +39,7 @@ Undercooked was developed as a prototype to spark discussion about expanding on 
 Here is what I contributed to this project.
 
 - Player Input 
-- Interacting with items
+- Using inheritance for item interactions
 - Switching Table states via Coroutines
 
 > Player Input
@@ -70,7 +70,7 @@ Then to reference them in the script, I put the code below into the <code>Start<
 
 This system is really convenient as it removes the need for constant polling in Update loops. You can also write code once that works for all sources of input, sources being different controller types and keyboards. By using the name of the input in the action table, things like camera movement and directional input can be converted into vectors.
 
-> Interacting with items
+> Using inheritance for item interactions
 
 Several objects in Undercooked are interactable, including trash, food, tables, and trashcans. I designed an <code>Interactable</code> base class to handle common functionality, with specific behavior extended through <a href="https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)" target="_blank" rel="noopener noreferrer">inheritance</a>.
 

@@ -25,19 +25,15 @@ After recreating Celeste Classic (you can play that <a href="https://gizmo435.it
     />
 </a>
 
-> Initial Idea and Design
-
-From a design perspective, I aimed for a game similar to Celeste, but more involved in its platforming. I chose the popular and effective route: I added a puzzle element. Players must consider both the limited bullets and their order. The gun in JuJu is not for combat, but for movement, effectively replacing the dash mechanic that Celeste Classic uses. This short puzzle-platformer was a class project and despite its simplicity and rough edges (note JuJu's misaligned left eye, I messed up the perfect pixel alignment), it challenged me in several aspects of solo development.
-
 > Art and Credit
 
 I went to YouTube for help with art and physics. Thanks to <a href="https://www.youtube.com/watch?v=STyY26a_dPY" target="_blank" rel="noopener noreferrer">Mix and Jam</a> for all of that. 
 
 I used this tutorial to fine-tune my physics as well as acquire a tile palette. I also discovered <a href="https://dotween.demigiant.com/index.php" target="_blank" rel="noopener noreferrer">DoTween</a> through this video, which handles things like screen shake. 
 
-## Development and Takeaways
+> Initial Idea and Design
 
-This simple game, developed in Spring 2023, was an early project in my game development journey. Here are key areas I’d like to highlight:
+From a design perspective, I aimed for a game similar to Celeste, but more involved in its platforming. I chose the popular and effective route: I added a puzzle element. Players must consider both the limited bullets and their order. The gun in JuJu is not for combat, but for movement, effectively replacing the dash mechanic that Celeste Classic uses. This short puzzle-platformer was a class project I took on early in my game development journey. It is very simple and has a lot of rough edges (note JuJu's misaligned left eye, I messed up the perfect pixel alignment) and it challenged me in several aspects of solo development. Here are key areas I’d like to highlight:
 
 • Game Feel and Gravity
 
