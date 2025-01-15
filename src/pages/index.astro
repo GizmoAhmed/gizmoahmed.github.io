@@ -11,9 +11,6 @@ import Icon from "../components/Icon.astro";
 import Pill from "../components/Pill.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 
-// Page section components
-import Skills from "../components/Skills.astro";
-
 // Content Fetching: List work projects
 const projects = (await getCollection("work")).sort(
     (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
@@ -39,12 +36,12 @@ const projects = (await getCollection("work")).sort(
 
                 <div class="roles">
                     <Pill><Icon icon="terminal-window" size="1.33em" /> C++</Pill>
-                    <Pill><Icon icon="terminal-window" size="1.33em" /> C#</Pill
+                    <Pill><Icon icon="terminal-window" size="1.33em" />S C#</Pill
                     >
                     <Pill
                         ><Icon icon="terminal-window" size="1.33em" /> Python</Pill
                     >
-                    <Pill><Icon icon="code" size="1.33em" /> Javascript</Pill>
+                    <Pill><Icon icon="code" size="1.33em" /> Javascript, HTML, CSS</Pill>
                 </div>
 
                 <h3>Game Engines & Frameworks</h3>
