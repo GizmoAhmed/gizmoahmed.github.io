@@ -23,7 +23,7 @@ Changing numbers, counting chips, and making new features was tedious when using
 
 My design process is ongoing, and the game has gone through several iterations. I have my development log and GitHub repository linked below if you are ever curious about how it's currently going.
 
-- <a href="https://github.com/GizmoAhmed/Mos-CardWars2" target="_blank" rel="noopener noreferrer">Mos-CardWars2 | GitHub Repo</a>.
+- <a href="https://github.com/GizmoAhmed/Mos-CardWars2" target="_blank" rel="noopener noreferrer">Mos-CardWars2 (GitHub Repo)</a>.
 
 - <a href="https://docs.google.com/document/d/1J2F-fg1T6fxYczbac2s4jPrRyimjqx_EszhiFlSmRzo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Card Wars II: DevLog</a>.
 
@@ -143,56 +143,26 @@ Since <code>RpcBattle</code> is run on both clients, I need to discern which cli
 
 Only the player that owns the attacking card will have their stats changed. This makes two different functions out of one using a boolean.
 
-This can also be used with coroutines. Here is how it looks for both clients during the battle phase of play:
+> Language Integrated Query (LINQ)
+
+LNQ is how C# organizes and manipulates data, similar to list comprehension in other languages. In this game, creatures attack from left to right across the game board. In my <code>Player</code> script, I want each card to be put into a list and ordered via land number. That is easy enough, simply make a key-value pair. But getting only <code>Creature</code> cards that are <code>Placed</code> and <code>isOwned</code> is a little harder. Here, I use LNQ to do just that:
+
+<code>
+
+    var battleReadyCards = FindObjectsOfType<CreatureCard>()
+          .Where(creatureCard => creatureCard.isOwned && creatureCard.currentState == CardState.Placed)
+          .Select(creatureCard => {
+            string landName = creatureCard.MyLand.name;
+            int landNumber = int.Parse(landName.Substring(landName.Length - 1));
+            return new KeyValuePair<GameObject, int>(creatureCard.gameObject, landNumber);
+          } ).ToList();
+</code>
+
+Using <code>Select</code>, I can add key-value pairs to the </code>battleReadyCards<code> list. I then use <code>Where</code> to pick creature cards that are <code>isOwned</code> and <code>Placed</code>. I can iterate over this list using coroutines to create the battle phase: 
 
 <video controls width="600">
   <source src="\assets\cardwars-images\battle.mp4" type="video/mp4" alt="card battle phase" class="stack gap-10 content"> 
 </video>
-
-> Game Manager
-
-A <code>GameManager</code> script tracks game and client states. Functions annotated with <code>[Server]</code> run exclusively on the server, preventing client manipulation. For example, I can have the game manager keep track of when players hit the ready button.
-
-Here is the code for that:
-
-<code>
-
-
-
-
-    public class GameManager : NetworkBehaviour
-    {
-      [Server]
-      public void PlayerReady(NetworkConnectionToClient conn)
-      {
-        if (currentPhase == GamePhase.ChooseLand)
-        {
-          if (!readyPlayers.Contains(conn))
-          {
-            readyPlayers.Add(conn);
-
-            Player thisPlayer = conn.identity.GetComponent<Player>();
-
-            thisPlayer.RpcEnablePlayer(false);
-
-            CheckAllPlayersReady();
-          }
-        }
-          
-        [Server]
-        private void CheckAllPlayersReady()
-        {
-          if (readyPlayers.Count >= 2)
-          {
-            readyPlayers.Clear();
-            ChangePhase(GamePhase.ChooseLand, GamePhase.SetUp);
-          }
-        }
-      }
-    }
-</code>
-
-Each time a client hits ready, a <code>[Command]</code> call to the <code>PlayerReady</code> function is run. This function checks if the player is in the <code>GameManager</code> players list. It then checks if there are exactly two players on the server. 
 
 > Stay Tuned...
 

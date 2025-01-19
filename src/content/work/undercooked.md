@@ -34,7 +34,7 @@ The controls are viewable on the itch.io page but I will put them here anyway:
 
 > Motivation
 
-Undercooked was developed as a prototype to spark discussion about expanding on this genre within the studio. I worked alongside an audio engineer, artists, and fellow programmers, gaining valuable experience in communicating technical concepts to diverse team members. Developing a game within a limited time frame accelerated my learning across all facets of game development. 
+Undercooked was developed as a prototype to spark discussion about expanding on this genre within the studio. I worked alongside an audio engineer, artists, and fellow programmers. Developing a game within a limited time frame accelerated my learning across all facets of game development. 
 
 Here is what I contributed to this project.
 

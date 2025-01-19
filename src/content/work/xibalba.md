@@ -48,31 +48,6 @@ While the crouch and sprint are straightforward in terms of programming, jumping
   <source src="\assets\xibalba-images\jumping.mp4" type="video/mp4" alt="jumping" class="stack gap-10 content"> 
 </video>
 
-The jump buffer allows for a more responsive jump by saving jump inputs as a player lands. Coyote time allows players to still jump for a short time after running off a ledge to achieve a similar effect:
-
-<code>
-
-
-
-    // called whenever the jump button is pressed
-    private void OnJumpInput()
-    {
-      jumpBufferCounter = jumpBufferTime; // start the jump buffer timer
-      jumpRequested = true; 
-    }
-
-    // perform actual jump when jump 'requested'
-    private void Jump()
-    {
-      rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z); // here is the actual jump
-
-      // resets
-      jumpBufferCounter = 0;
-      coyoteTimeCounter = 0;
-      jumpRequested = false;
-    }
-</code>
-
 > Raycasts
 
 A neat trick I learned in Unity is the raycast. The raycast is useful for visualizing things like camera vision and checking when the player is touching a surface. Instead of using colliders for the player's feet, I used a raycast to check if the player is actively grounded:
@@ -94,22 +69,7 @@ A neat trick I learned in Unity is the raycast. The raycast is useful for visual
 
 The debug line draws a raycast pointing downwards within the bounds of the player and colors it cyan. The function will return true if it is touching the ground. I run the <code>IsGrounded</code> function to cast this ray.  
 
-This is a functional use case for the raycast, there is also a use case for when I want to debug, like when visualizing a vector. If I wanted to know exactly where the camera is looking and how far a player can interact from, I can visualize it with a raycast: 
-
-<code>
-
-
-        // starting at transform, point forward
-        Ray ray = new Ray(transform.position, transform.forward);
-        RaycastHit hit;
-
-        // raycast up until reach distance
-        Debug.DrawRay(transform.position, transform.forward * reachDist, Color.red);
-</code>
-
-This code is run every frame using the <code>Update</code> method. It creates a ray, draws it in red, and then keeps track of the colliders it hits. If the ray hits the collider of an item (objects with the <code>ItemSO</code> script), then it is a valid candidate for picking up and adding to the inventory.
-
-You'll see in the video below how the raycast (the red line for the camera and blue line for the ground check) appears and why it is useful to have it for things like the camera:
+This is a functional use case for the raycast, there is also a use case for when I want to debug, like when visualizing a vector. If I wanted to know exactly where the camera is looking and how far a player can interact from, I can visualize it with a raycast. You'll see in the video below how the raycast (the red line for the camera and blue line for the ground check) appears and why it is useful to have it for things like the camera:  
 
 <video controls width="600">
   <source src="\assets\xibalba-images\raycast_camera.mp4" type="video/mp4" alt="raycast camera" class="stack gap-10 content"> 
@@ -119,7 +79,7 @@ You'll see in the video below how the raycast (the red line for the camera and b
 
 A green light feature we wanted for this game was to have items that the player could store and hold, items being things like podiums and relics. We elected to use a similar system to <a href="https://www.minecraft.net/en-us" target="_blank" rel="noopener noreferrer">Minecraft</a>, where items are added to slots in the HUD when picked up.
 
-To go about this, I decided to have each slot in the HUD have its own <code>ItemSlot</code> script. There would also be an inventory object that keeps track of each <code>ItemSlot</code>:
+To go about this, I decided to have each slot in the HUD have its own <code>ItemSlot</code> script. There would also be an inventory object that keeps track of each <code>ItemSlot</code>. An <code>Inventory</code> script reads a switch input from the player script that changes the active slot in the inventory hotbar.
 
 <a>
     <img
@@ -131,44 +91,7 @@ To go about this, I decided to have each slot in the HUD have its own <code>Item
     />
 </a>
 
-An <code>Inventory</code> script reads a switch input from the player script that changes the active slot in the inventory hotbar. Because each <code>ItemSlot</code> is indexed with a number like a list, I can simply increment and decrement the count. When the index reaches a slot, the item is shown in the player's hand:
-
-<code>
-
-
-      // go to next slot
-      public void NextSlot()
-      {
-          SelectedSlot += 1;
-
-      if (SelectedSlot > itemSlots.Count - 1) // went over
-          {
-              // SelectedSlot = 0;
-        SelectSlot(SelectedSlot = 0);
-      }
-
-          SelectSlot(SelectedSlot);
-      }
-
-      // show the item in this slot
-      public void ShowInHand(GameObject item)
-      {
-        // get the camera's transform
-        Transform cameraT = fpc.gameObject.transform;
-
-        // disconnect item from the world...
-        itemRB.isKinematic = true;
-        itemCOL.enabled = false;
-
-        //... and add it to the player's body
-        Transform parentChild = transform.GetChild(0);
-
-
-        //{.. more code for manipulating item's appearance}
-        }
-</code>
-
-The code above is for changing the inventory's index, as well as manipulating the scaling of the item so it shows up in the bottom right corner, like it were in the player's hand. Here is how it looks picking up, switching slots, and dropping items:
+ Because each <code>ItemSlot</code> is indexed with a number like a list, I can simply increment and decrement the count. When the index reaches a slot, the item is shown in the player's hand. Here is how it looks picking up, switching slots, and dropping items:
 
 <video controls width="600">
   <source src="\assets\xibalba-images\inv_and_items.mp4" type="video/mp4" alt="inventory at work" class="stack gap-10 content"> 
@@ -207,7 +130,7 @@ The <code>nav mesh surface</code> object is pictured below, as well as a nav lin
 
 > A little fun fact
 
-This game takes inspiration from Mayan culture, which is where the name 'Xibalba' comes from. Xibalba is the name of the underworld in the Mayan mythos and it translates to 'place of fright', which is an apt name since that was a design goal of ours. The monster that chases when you steal the correct relic, 'Ah Puch' embodies that:
+This game takes inspiration from Mayan culture, which is where the name 'Xibalba' comes from. Xibalba is the name of the underworld in the Mayan mythos and it translates to 'place of fright', which is an apt name since that was a design goal of ours. The monster that chases when you steal the correct relic, 'Ah Puch' embodies that (Well done <a href="https://automatoncreations.com/" target="_blank" rel="noopener noreferrer">Quinten</a>).
 
 <video controls width="600">
   <source src="\assets\xibalba-images\ah_puch.mp4" type="video/mp4" alt="ah puch" class="stack gap-10 content"> 
