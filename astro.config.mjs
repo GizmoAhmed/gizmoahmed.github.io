@@ -3,5 +3,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://gizmoahmed.github.io/Portfolio/"
+    site: "https://gizmoahmed.github.io"
+    base: "/GameDevPortfolio"
 });
