@@ -43,8 +43,6 @@ const { Content } = await render(entry);
 			</header>
 			<main class="wrapper">
 				<div class="stack gap-10 content">					
-					<!-- </img>
-					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />} -->
 					<div class="content">
 						<Content />
 					</div>
@@ -84,8 +82,8 @@ const { Content } = await render(entry);
 	}
 
 	.content {
-		font-size: var(--text-lg);
-		max-width: 95ch;
+		font-size: var(--text-base);
+		max-width: 90ch;
 		margin-inline: auto;
 	}
 

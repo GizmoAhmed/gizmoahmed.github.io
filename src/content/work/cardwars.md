@@ -27,6 +27,7 @@ My design process is ongoing, and the game has gone through several iterations. 
 
 - <a href="https://docs.google.com/document/d/1J2F-fg1T6fxYczbac2s4jPrRyimjqx_EszhiFlSmRzo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Card Wars II: DevLog</a>.
 
+This project has been a learning experience so far, especially in networking concepts using Mirror. While I continue to develop the game, I will be sure to update the repository, development log, and this project page. Stay tuned.
 
 > Why Mirror
 
@@ -129,13 +130,10 @@ Since <code>RpcBattle</code> is run on both clients, I need to discern which cli
     [ClientRpc]
     public void RpcBattle(CreatureCard attackingCard, CreatureCard defendingCard) 
     {
-      
       {...}
-
       if (attackingCard.isOwned) // if true, the local player is attacking, if false, they're defending
       {
         Player attackingPlayer = NetworkClient.localPlayer.GetComponent<Player>();
-
         attackingPlayer.CmdChangeStats(attackingPlayer.Score + attackingCard.AttackStat, "score");
       }
     }
@@ -164,6 +162,3 @@ Using <code>Select</code>, I can add key-value pairs to the </code>battleReadyCa
   <source src="\assets\cardwars-images\battle.mp4" type="video/mp4" alt="card battle phase" class="stack gap-10 content"> 
 </video>
 
-> Stay Tuned...
-
-This project has been a learning experience so far, especially in networking concepts using Mirror. While I continue to develop the game, I will be sure to update the repository, development log, and this project page. Stay tuned.

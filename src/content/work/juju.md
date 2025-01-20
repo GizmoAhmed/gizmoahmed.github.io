@@ -31,9 +31,9 @@ I went to YouTube for help with art and physics. Thanks to <a href="https://www.
 
 I used this tutorial to fine-tune my physics as well as acquire a tile palette. I also discovered <a href="https://dotween.demigiant.com/index.php" target="_blank" rel="noopener noreferrer">DoTween</a> through this video, which handles things like screen shake. 
 
-> Initial Idea and Design
+> Motivation and Design
 
-From a design perspective, I aimed for a game similar to Celeste, but more involved in its platforming. I chose the popular and effective route: I added a puzzle element. Players must consider both the limited bullets and their order. The gun in JuJu is not for combat, but for movement, effectively replacing the dash mechanic that Celeste Classic uses. This short puzzle-platformer was a class project I took on early in my game development journey. It is very simple and has a lot of rough edges (note JuJu's misaligned left eye, I messed up the perfect pixel alignment) and it challenged me in several aspects of solo development. Here are key areas I’d like to highlight:
+From a design perspective, I aimed for a game similar to Celeste, but more involved in its platforming. I chose the popular and effective route: I added a puzzle element. Players must consider both the limited bullets and their order. The gun in JuJu is not for combat, but for movement, effectively replacing the dash mechanic that Celeste Classic uses. This short puzzle-platformer was a class project I took on early in my game development journey. It is very simple and has a lot of rough edges (Take a look at JuJu's misaligned left eye, Unity made an attempt to 'perfect pixel' my art), but it nonetheless challenged me in several aspects of solo development. Here are key areas I’d like to highlight:
 
 • Game Feel and Gravity
 
