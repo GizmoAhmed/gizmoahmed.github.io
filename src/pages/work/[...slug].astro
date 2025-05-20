@@ -12,7 +12,7 @@ interface Props {
 }
 
 // This is a dynamic route that generates a page for every Markdown file in src/content/
-// Read more about dynamic routes and this `getStaticPaths` function in the Astro docs:
+// Read more about dynamic routes and this getStaticPaths function in the Astro docs:
 // https://docs.astro.build/en/core-concepts/routing/#dynamic-routes
 export async function getStaticPaths() {
 	const work = await getCollection('work');
@@ -147,4 +147,50 @@ const { Content } = await render(entry);
 			font-size: var(--text-2xl);
 		}
 	}
+
+	@media (max-width: 800px) {
+	.content {
+		width: 100%;
+		padding-inline: 1rem;
+	}
+
+	.content :global(img),
+	.content :global(video),
+	.content :global(iframe) {
+		max-width: 100% !important;
+		width: 100% !important;
+		height: auto !important;
+		margin: 1rem auto !important;
+		display: block;
+	}
+
+	.content :global(h1),
+	.content :global(h2),
+	.content :global(h3),
+	.content :global(h4),
+	.content :global(h5) {
+		text-align: center;
+		font-size: 1.25rem;
+	}
+
+	.details {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.hero h1,
+	.hero h2,
+	.hero h3 {
+		font-size: 1.5rem !important;
+		text-align: center !important;
+	}
+	.tags {
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+}
+
 </style>

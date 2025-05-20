@@ -27,7 +27,8 @@ const projects = (await getCollection("work")).sort(
                 <Hero
                     title="Mohamed Ahmed"
                     subtitle=""
-                    tagline={`I am a senior at Michigan State University pursuing a Bachelor's of Engineering in Computer Science. My experience spans mobile and web app development, game design, and simulation software, where I’ve contributed as a student, industry professional, and hobbyist. I am looking for work in the game industry, where I can apply my passion for game programming.`}
+                    tagline={`I am a recent graduate from Michigan State University, recieveing a Bachelor's of Science in Computer Science from the School of Engineering.
+                    My experience spans mobile and web app development, game design, and simulation software, where I’ve contributed as a student, industry professional, and hobbyist. I am looking for work in the game industry, where I can apply my passion for game programming.`}
                     align="center"
                 />
 
@@ -44,6 +45,8 @@ const projects = (await getCollection("work")).sort(
                     <Pill
                         ><Icon icon="code" size="1.33em" /> Javascript, HTML, CSS</Pill
                     >
+                    <Pill><Icon icon="device-mobile" size="1.33em" /> Dart</Pill
+                    >
                 </div>
 
                 <h3>Game Engines & Frameworks</h3>
@@ -57,9 +60,10 @@ const projects = (await getCollection("work")).sort(
                     <Pill
                         ><Icon icon="rocket-launch" size="1.33em" /> Astro</Pill
                     >
+                    <Pill><Icon icon="hash" size="1.33em" /> .Net</Pill>
                 </div>
 
-                <h2>Projects</h2>
+                <h3>Projects</h3>
 
                 <div class="gallery">
                     <Grid variant="offset">
@@ -85,7 +89,10 @@ const projects = (await getCollection("work")).sort(
         }
 
         .roles {
-            display: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
         }
 
         @media (min-width: 50em) {
@@ -99,7 +106,7 @@ const projects = (await getCollection("work")).sort(
             .roles {
                 margin-top: 0.5rem;
                 display: flex;
-                gap: 0.5rem;
+                gap: 1.5rem;
             }
         }
 
@@ -203,6 +210,22 @@ const projects = (await getCollection("work")).sort(
             .mention-card {
                 border-radius: 1.5rem;
                 height: 9.5rem;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .hero h3 {
+                font-size: 1.25rem !important;
+                text-align: center;
+            }
+
+            .roles {
+                gap: 0.25rem;
+            }
+
+            .pill {
+                font-size: 0.875rem;
+                padding: 0.25rem 0.75rem;
             }
         }
     </style>
