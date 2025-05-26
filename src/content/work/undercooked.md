@@ -13,7 +13,7 @@ tags:
 
 > Play <a href="https://haydenhe.itch.io/undercooked" target="_blank" rel="noopener noreferrer">Undercooked</a>
 
-Undercooked is a local multiplayer restaurant simulator created by the prototyping team at <a href="https://gamedev.msu.edu/spartasoft/" target="_blank" rel="noopener noreferrer">Spartasoft Studio @ Michigan State</a>, where I contributed as a programmer. This game takes inspiration from <a href="https://ghosttowngames.com/game/overcooked/" target="_blank" rel="noopener noreferrer">Overcooked by Ghost Town Games</a> in more than just its name. In this two-player game, one player takes on the role of the Server, tasked with cleaning the restaurant and serving guests, while the other player assumes the role of the Rival, whose goal is to create as much mess and havoc as possible. The Server wins by maintaining cleanliness until time runs out, while the Rival wins by causing enough chaos.
+Undercooked is a local multiplayer restaurant simulator created by the prototyping team at <a href="https://gamedev.msu.edu/spartasoft/" target="_blank" rel="noopener noreferrer">Spartasoft Studio at Michigan State University</a>, where I contributed as a programmer. This game takes inspiration from <a href="https://ghosttowngames.com/game/overcooked/" target="_blank" rel="noopener noreferrer">Overcooked by Ghost Town Games</a> in more than just its name. In this two-player game, one player takes on the role of the Server, tasked with cleaning the restaurant and serving guests, while the other player assumes the role of the Rival, whose goal is to create as much mess and havoc as possible. The Server wins by maintaining cleanliness until time runs out, while the Rival wins by causing enough chaos.
 
 <a>
     <img

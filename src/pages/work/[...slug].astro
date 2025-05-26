@@ -1,21 +1,21 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection } from "astro:content";
 
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
-import Hero from '../../components/Hero.astro';
-import Pill from '../../components/Pill.astro';
-import { render } from 'astro:content';
+import Hero from "../../components/Hero.astro";
+import Pill from "../../components/Pill.astro";
+import { render } from "astro:content";
 
 interface Props {
-	entry: CollectionEntry<'work'>;
+	entry: CollectionEntry<"work">;
 }
 
 // This is a dynamic route that generates a page for every Markdown file in src/content/
 // Read more about dynamic routes and this getStaticPaths function in the Astro docs:
 // https://docs.astro.build/en/core-concepts/routing/#dynamic-routes
 export async function getStaticPaths() {
-	const work = await getCollection('work');
+	const work = await getCollection("work");
 	return work.map((entry) => ({
 		params: { slug: entry.id },
 		props: { entry },
@@ -42,7 +42,7 @@ const { Content } = await render(entry);
 				</div>
 			</header>
 			<main class="wrapper">
-				<div class="stack gap-10 content">					
+				<div class="stack gap-10 content">
 					<div class="content">
 						<Content />
 					</div>
@@ -105,7 +105,7 @@ const { Content } = await render(entry);
 		background: var(--gradient-subtle);
 		border: 1px solid var(--gray-800);
 		max-width: 40%;
-  		max-height: 40%;
+		max-height: 40%;
 	}
 
 	.content :global(blockquote) {
@@ -149,48 +149,46 @@ const { Content } = await render(entry);
 	}
 
 	@media (max-width: 800px) {
-	.content {
-		width: 100%;
-		padding-inline: 1rem;
+		.content {
+			width: 100%;
+			padding-inline: 1rem;
+		}
+
+		.content :global(img),
+		.content :global(video),
+		.content :global(iframe) {
+			max-width: 100% !important;
+			width: 100% !important;
+			height: auto !important;
+			margin: 1rem auto !important;
+			display: block;
+		}
+
+		.content :global(h1),
+		.content :global(h2),
+		.content :global(h3),
+		.content :global(h4),
+		.content :global(h5) {
+			text-align: center;
+			font-size: 1.25rem;
+		}
+
+		.details {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+
+		.hero h1,
+		.hero h2,
+		.hero h3 {
+			font-size: 1.5rem !important;
+			text-align: center !important;
+		}
+		.tags {
+			flex-direction: column;
+			align-items: center;
+			gap: 0.5rem;
+		}
 	}
-
-	.content :global(img),
-	.content :global(video),
-	.content :global(iframe) {
-		max-width: 100% !important;
-		width: 100% !important;
-		height: auto !important;
-		margin: 1rem auto !important;
-		display: block;
-	}
-
-	.content :global(h1),
-	.content :global(h2),
-	.content :global(h3),
-	.content :global(h4),
-	.content :global(h5) {
-		text-align: center;
-		font-size: 1.25rem;
-	}
-
-	.details {
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-	}
-
-	.hero h1,
-	.hero h2,
-	.hero h3 {
-		font-size: 1.5rem !important;
-		text-align: center !important;
-	}
-	.tags {
-	flex-direction: column;
-	align-items: center;
-	gap: 0.5rem;
-}
-
-}
-
 </style>

@@ -1,6 +1,6 @@
 ---
 title: Card Wars II
-publishDate: 2020-03-02 00:00:00
+publishDate: 2025-12-31 00:00:00
 img:  \assets\cardwars-images\cardback.png
 img_alt: Card Wars img
 description: |
